@@ -1,0 +1,186 @@
+:root {
+  /*Colors*/
+  --c1: #495e57;
+  --c1_h: #3c4c45;
+  --c2: #f4ce14;
+  --text: #333333;
+  --text_hover: var(--c1);
+  --bg: #ffffff;
+  --bg1: #edefee;
+
+
+  --box_shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  --input_box_shadow: 0 0 0 1px var(--primary);
+
+  --card_box_shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  --card_hover_box_shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+  /**/
+  --max_width: 800px;
+  --padding: 10px 12px;
+  --padding_btn: 0.4em;
+  --gap: 25px;
+  --gap_min: 10px;
+  --radius: 4px;
+
+  --body_size: 16px;
+  --h1_size: 3rem;
+  --h2_size: 2.07rem;
+  --h3_size: 1.73rem;
+  --h4_size: 1.44rem;
+  --h5_size: 1.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--body_size);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: var(--body_size);
+  background-color: var(--bg);
+  color: var(--text_color);
+  position: relative;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+p, span {
+  color: var(--text_color);
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--text_color);
+  line-height: 1.2em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--h1_size)
+}
+
+h2 {
+  font-size: var(--h2_size);
+}
+
+h3 {
+  font-size: var(--h3_size);
+}
+
+h4 {
+  font-size: var(--h4_size);
+}
+
+h5 {
+  font-size: var(--h5_size);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: var(--text_hover);
+}
+
+ul {
+  list-style: none;
+}
+
+svg,
+img {
+  object-fit: cover;
+}
+
+.chakra-radio-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--gap_min);
+  width: 100%;
+  margin-top: -15px;
+  border-bottom: 1px solid var(--bg1);
+  padding-bottom: 20px;
+}
+
+.chakra-radio {
+  background-color: var(--bg1);
+  flex: 1 1 auto;
+  display: block;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+}
+
+.chakra-radio[data-checked] {
+  background-color: var(--c1);
+  color: var(--bg);
+}
+
+.chakra-radio__control {
+  display: none !important;
+}
+
+.chakra-radio__label {
+  width: 100%;
+  text-align: center;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.chakra-radio__label span {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+#navToggle {
+  display: none;
+  padding: 10px;
+  aspect-ratio: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  #navToggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: var(--bg);
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding: 20px;
+    font-size: 1.2em;
+    gap: 1em;
+    transition: all 0.3s ease-in-out;
+    max-width: calc(100vw - 100px) !important;
+  }
+
+  nav.show {
+    left: 0;
+  }
+
+  .langingSection {
+    flex-direction: column-reverse !important;
+    padding: 100px 0 30px 0 !important;
+  }
+}
